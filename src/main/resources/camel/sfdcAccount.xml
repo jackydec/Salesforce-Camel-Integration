@@ -1,0 +1,9 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="sfdcAccount">
+        <from uri="salesforce:AccountUpdates"/>
+        <convertBodyTo type="String">
+        </convertBodyTo>
+        <to uri="stream:out"/>
+        <!--<to uri="file://C:\\temp?fileName=data.csv&amp;fileExist=Append"/>-->
+    </route>
+</routes>
